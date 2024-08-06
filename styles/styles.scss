@@ -57,12 +57,40 @@ section {
   background-color: var(--color-primary);
 }
 
-.sec1,
-.sec2,
-.sec3,
+.sec1 {
+  display: none;
+  transform: translateY(0) scale(1);
+  background-color: rgba(161, 228, 38, 0.849);
+}
+.sec2 {
+  display: none;
+  transform: translateY(0) scale(1);
+  background-color: #484071;
+}
+
+.sec3 {
+  display: none;
+  transform: translateY(0) scale(1);
+  background-color: #308a48;
+}
 .sec4 {
   display: none;
   transform: translateY(0) scale(1);
+  background-color: #b24949;
+}
+
+.active {
+  display: block;
+  animation: scaleAnim 0.5s ease-in-out;
+}
+
+@keyframes scaleAnim {
+  0% {
+    transform: translateY(-100%) scaleY(0);
+  }
+  100% {
+    transform: translateY(0) scaleY(1);
+  }
 }
 
 .controlls {
@@ -75,31 +103,33 @@ section {
   align-items: center;
   justify-content: center;
   transform: translateY(-50%);
-  .active-btn {
-    background-color: var(--color-secondary) !important;
-    transition: all, 0.4s ease-in-out;
-    i {
-      color: var(--color-white) !important;
-    }
-  }
+}
 
-  .control {
-    padding: 1rem;
-    cursor: pointer;
-    background-color: var(--color-beige4);
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.7rem 0;
-    box-shadow: var(--box-shadow1);
+.active-btn {
+  background-color: var(--color-secondary) !important;
+  transition: all 0.4s ease-in-out;
+}
 
-    i {
-      font-size: 1.2rem;
-      color: var(--color-grey2);
-      pointer-events: none;
-    }
-  }
+.active-btn i {
+  color: var(--color-white) !important;
+}
+
+.control {
+  padding: 1rem;
+  cursor: pointer;
+  background-color: var(--color-beige4);
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.7rem 0;
+  box-shadow: var(--box-shadow1);
+}
+
+.control i {
+  font-size: 1.2rem;
+  color: var(--color-grey2);
+  pointer-events: none;
 }
